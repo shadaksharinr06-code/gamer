@@ -10,12 +10,14 @@ DocuDual RAG is a full-stack web application designed for high-trust document qu
 ## 🌟 Key Features
 
 - **Multi-Format Ingestion:** Drag-and-drop parsing for **PDF**, **DOCX**, and **TXT** files (up to **25MB**).
+- **Whitespace-Aware PDF Parser:** Clean coordinate-aware word extraction, hyphenation repair, and multi-page layout recovery.
 - **Page & Section Tracking:** Preserves structural metadata across chunk boundaries.
 - **Scanned Document Detection:** Flags image-only or low-density PDFs where OCR is required.
 - **Chunking Pipeline:** Recursive character splitting with `chunk_size=1000` and `chunk_overlap=150`.
+- **Hybrid Search Engine:** Combines **BM25 keyword retrieval** (with Robertson-Spärck Jones IDF & exact phrase boosting) and dense vector embeddings.
+- **Multi-Model LLM Support:** Works with **Google Gemini (1.5 Flash)**, **OpenAI (GPT-4o)**, or the **Built-in Offline Extractive Synthesizer** (no external key required).
 - **Dual-View UI:** Switch seamlessly between a **Side-by-Side Split Column** view and a **Tabbed** view.
 - **Interactive Source Inspector:** Click any citation chip (e.g., `[Page 2, Para 3]`) to inspect the raw context chunk and similarity score.
-- **Structured LLM Output:** Single OpenAI `gpt-4o` call enforcing a strict JSON schema to minimize latency and cost.
 - **Flexible Architecture:** Run either as a unified **Next.js Full-Stack App** (Route Handlers) or with a decoupled **Python FastAPI** backend.
 
 ---
